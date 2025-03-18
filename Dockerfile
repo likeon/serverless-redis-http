@@ -1,4 +1,4 @@
-FROM elixir:1.13.4-alpine AS builder
+FROM elixir:otp-27-alpine AS builder
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY config/ ./config/
 ENV MIX_ENV=prod
 RUN mix release
 
-FROM elixir:1.13.4-alpine
+FROM elixir:otp-27-alpine
 
 WORKDIR /app
 
